@@ -8,7 +8,7 @@
   ทั่วโลกให้สามารถส่งข้อมูลระหว่างกันได้
 - ใช้ TCP/IP protocol ในการ transfer data ระหว่าง network
 
-`Note : ` protocol เป็น standard หรือ rule
+`Note :` protocol เป็น standard หรือ rule
 
 ## World wide web(www)
 
@@ -56,3 +56,21 @@
 - 301(moved permanently) -> resource ถูกย้ายแล้ว และ client กำลังถูกเปลี่ยนเส้นทาง
 - 404(not found) -> the requested resource was not found
 - 500(Internal server error) -> error ที่เกิดจาก server
+
+## How Do Browsers Work?
+
+- ทุกครั้งที่ browser โหลดหน้า webpage ขึ้นมา 1 ครั้ง จะมีการส่ง multiple request พร้อมๆกันไปที่ server
+- หลังจากที่เราใส่ url แล้ว enter server จะ process และส่ง html file กลับมาที่ client
+- ใน html file จะมี content ของ website ทั้งหมด
+- browser จะ search element ใน html file แล้วก็เริ่ม request พวก external resources ทั้งหมดที่ถูกใช้ใน html file ดังนี้
+  - `css` -> server ส่ง css กลับมา browser จะอ่าน css แล้ว apply style ให้กับ element content
+  - `request-response cycle` -> server ส่งพวก assets(image,video) กลับมาที่ browser บางที่ถ้ามันมีขนาดใหญ่ ก็อาจจะใช้เวลาในการ render
+  - `javascript` -> เป็นตัวทำให้ website มี interactive
+- additional request พวกนี้ จะถูก request พร้อมกัน ทำงานเป็น parallel
+- resource ทั้งหมดจะถูก render พร้อมกันแสดงออกมาเป็นหน้า website
+- process ในการ render หน้า website จะเร็วหรือช้าขึ้นอยู่กับ
+  - speed ของการ connection ของ user
+  - size ของ website
+  - ระยะทางระหว่าง browser กับ server
+
+`Note :` webpage ที่ไม่ใช้ javascript จะเรียกว่า `static webpage`
