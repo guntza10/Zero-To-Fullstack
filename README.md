@@ -47,3 +47,12 @@
 - browser send request ไปที่ server และ display or render website files
 - server store website files และ send back กลับไปที่ web browser เมื่อเกิด request
 - HTTP(`hypertext transfer protocol`) เป็น standard หรือ rule ที่ browser และ server transfer data ระหว่างกัน
+
+## Status code
+
+- เป็นสิ่งที่ server ส่งกลับมาพร้อม response เพื่อบอกให้ browser รู้ว่า request ที่ส่งไป successful หรือ error
+- status code จะช่วยให้ browser รู้ว่าจะ handle กับ data ที่ถูกส่งกลับมากับ response นี้แบบไหน
+- 200(ok) -> request succeed
+- 301(moved permanently) -> resource ถูกย้ายแล้ว และ client กำลังถูกเปลี่ยนเส้นทาง
+- 404(not found) -> the requested resource was not found
+- 500(Internal server error) -> error ที่เกิดจาก server
