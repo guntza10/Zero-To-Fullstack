@@ -74,3 +74,23 @@
   - ระยะทางระหว่าง browser กับ server
 
 `Note :` webpage ที่ไม่ใช้ javascript จะเรียกว่า `static webpage`
+
+## Web 2.0
+
+### Web 1.0 (static website)
+
+- เป็น website ที่ให้ user เข้ามาอ่าน content ได้อย่างเดียว
+- user ไม่สามารถ interact อะไรกับตัว website ได้
+- content ถูกสร้างจากทางเดียว
+- เวลามีการเปลี่ยนแปลงหน้า website แค่บางส่วน จะต้อง re-load ทั้งหน้าใหม่
+
+### Web 2.0
+
+- user สามารถ interact กับ website ได้
+- user สามารถสร้าง content เองได้บน website (blog,social media)
+- สามารถเปลี่ยนแปลงบางส่วนของ website ได้โดยที่ไม่ต้อง re-load ทั้งหน้าใหม่
+
+`Note :` เกิด technical ที่ advance
+
+- jQuery เป็น js framework ตัวแรกที่สามารถ fetch data ได้ในขณะที่ web กำลังรัน
+- เกิด web framework ที่ connect database เช่น Spring, Django, Ruby-on-Rails
