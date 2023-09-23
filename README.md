@@ -94,3 +94,10 @@
 
 - jQuery เป็น js framework ตัวแรกที่สามารถ fetch data ได้ในขณะที่ web กำลังรัน
 - เกิด web framework ที่ connect database เช่น Spring, Django, Ruby-on-Rails
+
+# WEB DEVELOPMENT
+
+- `HTML` — structures website content
+- `CSS` — applies styling to websites
+- `JavaScript` — adds interactivity to websites
+- `SQL` — allows your web application to store and retrieve data
