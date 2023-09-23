@@ -100,4 +100,4 @@
 - `HTML` — structures website content
 - `CSS` — applies styling to websites
 - `JavaScript` — adds interactivity to websites
-- `SQL` — allows your web application to store and retrieve data
+- `SQL(structured query language)` — allows your web application to store and retrieve data (save, modify, and access data)
