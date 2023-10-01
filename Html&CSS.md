@@ -1,6 +1,6 @@
 # HTML
 
-- hypertext markup language
+- hypertext markup language (เป็น raw text)
 - structures website content like layout,text,images,videos,elements
 - มี element tag ของ element นั้นๆ
 - มี attribute เอาไว้กำหนดคุณสมบัติต่างๆให้ element tag
