@@ -22,6 +22,11 @@
 ### Heading
 
 - สำหรับ text ที่เป็น title
+- การกำหนด heading ต้องกำหนดเป็นลำดับขั้น อย่า skip heading เช่น ใช้ h1 แล้วข้าม h2 ไปเป็น h3 เลย ไม่ได้ เพราะ
+  - screen reader ใช้ heading tag ในการช่วย user navigate ผ่าน page
+  - ถ้าเรา skip heading มันจะทำให้ตัว screen reader สับสนได้ เพราะ heading hierarchy มีความสำคัญต่อการ read ของ screen reader
+  - ควรหลีกเลี่ยงการ skip heading hierarchy
+  - อีกเหตุผลคือบางทีมันไม่ใช่ heading เป็นแค่ content แต่เราไปกำหนด heading มันผิดความหมาย (incorrect semantic)
 
 ```
 <h1> </h1>
@@ -121,6 +126,8 @@
   Video not supported
 </video>
 ```
+
+## How to structure
 
 # CSS
 
