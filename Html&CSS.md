@@ -7,7 +7,9 @@
 - `<link rel="stylesheet" href="style.css">` เป็นการเรียกใช้ css file ใน html
   - rel เป็น attribute ที่ระบุ relation ระหว่าง current document กับ link resource
 
-## Body
+## Common Elements
+
+### Body
 
 - จะมีแค่ content ใน body เท่านั้นที่จะถูก display to screen
 
@@ -17,7 +19,7 @@
 </body>
 ```
 
-## Heading
+### Heading
 
 - สำหรับ text ที่เป็น title
 
@@ -30,11 +32,11 @@
 <h6> </h6>
 ```
 
-## Div
+### Div
 
 - เป็น element ที่เอาไว้ grouping elements ที่ต้องการ apply same style
 
-## Paragraph and Span
+### Paragraph and Span
 
 - เอาไว้ display text
 - paragraph => เป็น block element (block text)
@@ -45,7 +47,7 @@
 <span></span>
 ```
 
-## Styling Text
+### Styling Text
 
 - strong => highlight คำ
 - em => highlight คำ ด้วยการทำให้เป็นตัวเอียง
@@ -55,13 +57,13 @@
 <em></em>
 ```
 
-## Line Breaks
+### Line Breaks
 
 ```
 <br>
 ```
 
-## Unordered Lists
+### Unordered Lists
 
 - display list แต่ละตัวเป็น bullet point
 
@@ -73,7 +75,7 @@
 </ul>
 ```
 
-## Ordered Lists
+### Ordered Lists
 
 - display list แต่ละตัวเป็นเลขลำดับ
 
@@ -86,7 +88,7 @@
 </ol>
 ```
 
-## Image
+### Image
 
 - เป็น image content
 - attribute src เอาไว้ ref image ที่เราต้องการเอามา display อาจจะเป็น url หรือ local address ก็ได้
@@ -106,7 +108,7 @@
 - Pair tag/Container tag -> คือมี opening tag กับ closing tag ครอบ content
 - Self-closing tag -> คือไม่ต้องมี opening tag กับ closing tag ครอบ content มันเปิด ปิดตัวเองเพราะไม่ต้องครอบ content ใดๆ
 
-## Video
+### Video
 
 - video content
 - attribute width,height เอาไว้กำหนด width,height ให้ video
