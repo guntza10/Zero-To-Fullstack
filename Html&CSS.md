@@ -22,7 +22,7 @@
 ### Heading
 
 - สำหรับ text ที่เป็น title
-- การกำหนด heading ต้องกำหนดเป็นลำดับขั้น อย่า skip heading เช่น ใช้ h1 แล้วข้าม h2 ไปเป็น h3 เลย ไม่ได้ เพราะ
+- การกำหนด heading ต้องกำหนดเป็นลำดับขั้น อย่า skip heading เช่น ใช้ h1 แล้วข้าม h2 ไปเป็น h3 เลย ไม่ได้ เพราะ (`ภายใต้ parent element เดียวกัน`)
   - screen reader ใช้ heading tag ในการช่วย user navigate ผ่าน page
   - ถ้าเรา skip heading มันจะทำให้ตัว screen reader สับสนได้ เพราะ heading hierarchy มีความสำคัญต่อการ read ของ screen reader
   - ควรหลีกเลี่ยงการ skip heading hierarchy
@@ -99,9 +99,10 @@
 - attribute src เอาไว้ ref image ที่เราต้องการเอามา display อาจจะเป็น url หรือ local address ก็ได้
 - เป็น Self-closing tag
 - attribute alt(alternative text) เป็น attribute ที่เอาไว้อธิบาย image
-  - ถ้า load image fail เราสามารถเอา mouse ไป hover มันจะโชว์ alt ของเรา
-  - เอาไว้ให้ screen reading software สามารถอ่านแล้วก็พูดเสียงออกมาเพื่อให้ผู้พิการทางสายตาเข้าใจว่าคือรูปอะไร
+  - load image fail มันจะแสดง (ถ้า load image fail เราสามารถเอา mouse ไป hover มันจะโชว์ alt ของเรา)
+  - เอาไว้ให้ screen reader อ่าน (screen reader สามารถอ่านแล้วก็พูดเสียงออกมาเพื่อให้ผู้พิการทางสายตาเข้าใจว่าคือรูปอะไร)
   - มีผลต่อการทำ SEO(Search Engine Optimization) เพราะ search engine ไม่สามารถมองเห็น image ได้ การมี alt สามารถช่วย improve ranking ของ website ได้
+  - การกำหนด alt ควรให้กระชับ สั้นๆ ได้ใจความ ไม่ควรตั้งเป็นประโยคยาว
 
 ```
 <img src="image-location.jpg" />
