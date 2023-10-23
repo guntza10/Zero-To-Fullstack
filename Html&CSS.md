@@ -128,6 +128,48 @@
 </video>
 ```
 
+## Structure HTML
+
+### `<!DOCTYPE html>`
+
+- ประกาศเพื่อบอก browser ว่าเป็น type html,version html(HTML 5)
+
+### `<html>`
+
+- code ที่อยู่ภายใต้ tag html จะถูกแปลงเป็น html code เพื่อให้ browser อ่านได้
+- ถ้าไม่เขียน code html ภายใต้ tag html browser จะไม่สามารถอ่าน code html นั้นๆได้
+
+### `<head>`
+
+- จะ contain metadata ของ web
+- metadata เป็น info เกี่ยวกับ web ที่ไม่ได้ display โดยตรงให้เห็นบน web
+
+#### `metadata`
+
+1. `<title>`
+
+- ชื่อที่แสดงที่ tab bar
+- ควรตั้งให้น้อยกว่า 64 characters
+
+### `anchor tag`
+
+- `<a href="url">...<a>`
+- link to Other Web Pages with href attribute (`hyperlink reference`)
+- attribute `target="_blank"` เอาไว้ navigate เปิด tab ใหม่
+- สามารถใช้ href navigate ไปหน้าเดียวกันได้ เพื่อให้ scroll ไปที่ content ที่เราต้องการ
+
+  - กำหนด id ให้ element ที่เราต้องการให้ navigate ในหน้าเดียวกันนี้
+  - กำหนด anchor tag พร้อมด้วย href="#id"
+
+### `comments`
+
+- `<!-- ...content will be comment... -->`
+
+```
+<!-- This is a comment that the browser will not display.
+-->
+```
+
 ## How to structure
 
 # CSS
