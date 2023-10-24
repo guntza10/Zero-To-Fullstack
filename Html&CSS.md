@@ -170,6 +170,16 @@
 -->
 ```
 
+## Debugging HTML
+
+- เกิดได้จาก 2 สาเหตุ
+  - Syntax errors
+  - Logic errors
+- ถึงแม้จะเกิด error html browser ก็ยังสามารถแปลง html ได้ แล้ว render อยู่ดี
+  - HTML is parsed permissively because when the web was first created, it was decided that allowing people to get their content published was more important than making sure the syntax was absolutely correct. The web would probably not be as popular as it is today, if it had been more strict from the very beginning.
+
+`Note :` https://validator.w3.org/#validate_by_uri
+
 ## How to structure
 
 # CSS
