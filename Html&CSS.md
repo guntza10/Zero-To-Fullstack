@@ -180,6 +180,198 @@
 
 `Note :` https://validator.w3.org/#validate_by_uri
 
+## Table
+
+### Table Rows
+
+- ทุก table data จะต้องอยู่ภายใต้ table row
+
+```
+<table>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+</table>
+```
+
+### Table Data
+
+- display table data สำหรับแต่ละ cell(column)
+
+```
+<table>
+  <tr>
+    <td>73</td>
+    <td>81</td>
+  </tr>
+</table>
+```
+
+### Table Headings
+
+- มี attribute 2 ตัวสำหรับ table heading
+- attribute scope row => เป็นการบอกว่าเป็น heading สำหรับ row
+- attribute scope col => เป็นการบอกว่าเป็น heading สำหรับ column
+
+```
+<table>
+  <tr>
+    <th></th>
+    <th scope="col">Saturday</th>
+    <th scope="col">Sunday</th>
+  </tr>
+  <tr>
+    <th scope="row">Temperature</th>
+    <td>73</td>
+    <td>81</td>
+  </tr>
+</table>
+```
+
+### Table Borders
+
+- ใน html version เก่า attribute border ถูกใช้เพื่อกำหนดให้ border ของ table display โดยใส่เป็น integer (เป็นระดับความหนาของ border)
+- ใน html version ใหม่ เลิกใช้ attribute border นี้แล้ว
+- เราใช้ css ในการตกแต่ง border แทน
+
+```
+<table border="1">
+  <tr>
+    <td>73</td>
+    <td>81</td>
+  </tr>
+</table>
+```
+
+### Spanning Columns
+
+- attribute colspan กำหนดให้ table data นั้นๆ กินพื้นที่กี่ column heading (ต้องเป็น interger >= 1)
+- จากตัวอย่าง table data "Out of Town" กินพื้นที่ table heading Monday,Tuesday
+
+```
+<table>
+  <tr>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+  </tr>
+  <tr>
+    <td colspan="2">Out of Town</td>
+    <td>Back in Town</td>
+  </tr>
+</table>
+```
+
+### Spanning Rows
+
+- attribute rowspan กำหนดให้ table data นั้นๆ กินพื้นที่กี่ row (ต้องเป็น interger >= 1)
+
+```
+ <table>
+    <tr>
+      <!-- Row 1 -->
+      <th></th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    <tr>
+      <!-- Row 2 -->
+      <th>Morning</th>
+      <td rowspan="2">Work</td>
+      <td rowspan="3">Relax</td>
+    </tr>
+    <tr>
+      <!-- Row 3 -->
+      <th>Afternoon</th>
+    </tr>
+    <tr>
+      <!-- Row 4 -->
+      <th>Evening</th>
+      <td>Dinner</td>
+    </tr>
+  </table>
+```
+
+![rowspan](/images/rowspan.png "rowspan example")
+
+### Table Body
+
+- contain all table data ยกเว้น table heading
+- เป็นการแบ่ง section ของ table data โดยการ group ให้เป็นอันเดียวกัน
+
+```
+  <table>
+    <tbody>
+      <tr>
+        <td>Adam's Greenworks</td>
+        <td>14</td>
+        <td>Package Items</td>
+      </tr>
+      <tr>
+        <td>Davie's Burgers</td>
+        <td>2</td>
+        <td>Send Invoice</td>
+      </tr>
+      <tr>
+        <td>Baker's Bike Shop</td>
+        <td>3</td>
+        <td>Send Invoice</td>
+      </tr>
+      <tr>
+        <td>Miss Sally's Southern</td>
+        <td>4</td>
+        <td>Ship</td>
+      </tr>
+      <tr>
+        <td>Summit Resort Rentals</td>
+        <td>4</td>
+        <td>Ship</td>
+      </tr>
+      <tr>
+        <td>Strike Fitness</td>
+        <td>1</td>
+        <td>Enter Order</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+### Table Head
+
+- contain all table heading
+- เป็นการแบ่ง section ของ table heading โดย group ให้เป็นอันเดียวกัน
+- thead ยัง require tr ในการ contain th
+- จะมีแค่ column heading th ที่อยู่ใน thead เท่านั้น ที่จะใช้ attribute scope ได้(เพื่อบ่งบอกว่าเป็น row หรือ col heading)
+
+```
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Company Name</th>
+        <th scope="col">Number of Items to Ship</th>
+        <th scope="col">Next Action</th>
+      </tr>
+    </thead>
+  </table>
+```
+
+### Table Footer
+
+- เป็นการแบ่ง section ของ table data ที่เกี่ยวกับ sums, differences, results โดย group ให้เป็นอันเดียวกัน
+
+```
+<tfoot>
+  <tr>
+    <th>Total</th>
+    <td>$22M</td>
+    <td>$12.5M</td>
+  </tr>
+</tfoot>
+```
+
+`Note : ` เราสามารถแต่ง style ให้ table ด้วย css
+
 ## How to structure
 
 # CSS
