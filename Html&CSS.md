@@ -372,6 +372,86 @@
 
 `Note : ` เราสามารถแต่ง style ให้ table ด้วย css
 
+## Semantic HTML
+
+### Why use Semantic HTML?
+
+- Accessibility => Semantic HTML makes webpages accessible for mobile devices and for people with disabilities as well. This is because screen readers and browsers are able to interpret the code better.
+- SEO => It improves the website SEO. search engines are better able to identify the content of your website and weight the most important content appropriately
+- Easy to Understand => code easier to read for other web developers
+
+### Header and Nav
+
+1. Header(`<header>`) => container usually for either navigational links or introductory content containing `<h1>` to `<h6>` headings.
+2. Nav(`<nav>`) => a block of navigation links such as menus and tables of contents
+
+   - can be used inside of the `<header>` element but can also be used on its own.
+
+```
+<header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
+```
+
+### Main and Footer
+
+1. Main(`<main>`)
+
+- contain main content of web
+
+```
+<main>
+  <header>
+    <h1>Types of Sports</h1>
+  </header>
+  <article>
+    <h3>Baseball</h3>
+    <p>
+      The first game of baseball was played in Cooperstown, New York in the summer of 1839.
+    </p>
+  </article>
+</main>
+```
+
+2. Footer(`<footer>`)
+
+- contains information such as
+  - Contact information
+  - Copyright information
+  - Terms of use
+  - Site Map
+  - Reference to top of page links
+- อยู่ใต้สุดของ webpage
+
+```
+<footer>
+  <p>Email me at Codey@Codecademy.com</p>
+</footer>
+```
+
+### Article and Section
+
+1. Section(`<section>`) => defines elements in a document, such as chapters, headings, or any other area of the document with the same theme. (part group ของ content ที่เหมือนๆกัน)
+2. Article(`<article>`) => can hold content such as articles, blogs, comments, magazines, etc. (that might contain a combination of text, images, audio, etc.)
+
+`Note : ` Section,Article สามารถสลับ inside กันและกันได้ ขึ้นอยู่กับ context
+
+```
+<section>
+  <h2>Fun Facts About Cricket</h2>
+  <article>
+    <p>A single match of cricket can last up to 5 days.</p>
+  </article>
+</section>
+```
+
+### The Aside Element
+
 ## How to structure
 
 # CSS
