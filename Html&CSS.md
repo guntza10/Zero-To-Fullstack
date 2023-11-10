@@ -452,6 +452,78 @@
 
 ### The Aside Element
 
+- เป็นส่วนเสริมของ content ที่มา enhance element อื่นๆ (ไม่ได้ required ว่าต้องใส่)
+- ถูกใช้ใน
+  - content เสริมให้ article,section
+  - content เสริมด้านข้างๆ ซ้าย ขวา (additional sidebar)
+- contain additional information next to a main piece of content
+
+```
+<article>
+  <p>The first World Series was played between Pittsburgh and Boston in 1903 and was a nine-game series.</p>
+</article>
+<aside>
+  <p>
+   Babe Ruth once stated, “Heroes get remembered, but legends never die.”
+  </p>
+</aside>
+```
+
+### Figure and Figcaption
+
+- figure => contain media content
+- figcaption => contain description ของ media
+- figure,figcaption ใช้ร่วมกันเพื่อ grouping ​media with a caption.
+
+```
+<figure>
+  <img src="overwatch.jpg">
+  <figcaption>This picture shows characters from Overwatch.</figcaption>
+</figure>
+```
+
+### Audio and Attributes
+
+- is used to embed audio content
+- ref audio file with src attribute (ใน source tag)
+- ref type audio with type attribute (ใน source tag) (มีหรือไม่มีก็ได้ it helps the browser identify it more easily and determine if that type of audio file is supported by the browser.)
+- มีหลาย attribute ให้ใช้ มี 3 ตัวหลักที่ใช้
+  - controls: display audio controls พวก play,pause,mute เป็นต้น
+  - src: url audio file
+  - autoplay: เล่น audio auto
+- attribute ส่วนใหญ่จะใช้กับ audio tag (จะมีแค่ src,type ที่ใช้กับ source tag)
+
+```
+<audio>
+  <source src="iAmAnAudioFile.mp3" type="audio/mp3">
+</audio>
+```
+
+`Note: ` https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio#attributes
+
+### Video and Embed
+
+- video มี attribute ที่ใช้บ่อยๆ
+
+  - controls: display video control พวก play,pause,volume control,fullscreen option.
+  - autoplay: autoplay video เมื่อ load หน้าเว็บเสร็จ
+  - loop: loop video
+
+- content ที่อยู่ใน tag video จะ display ตอนที่เว็บไม่สามารถ display video ได้
+
+```
+<video src="coding.mp4" controls>
+  Video not supported
+</video>
+```
+
+- embed ใช้กับพวก media ต่างๆ (image,video,audio,gif)
+- เลิกใช้แล้ว (มีพวก tag img,video,audio ให้ใช้แทน)
+
+```
+<embed src="download.gif"/>
+```
+
 ## How to structure
 
 # CSS
