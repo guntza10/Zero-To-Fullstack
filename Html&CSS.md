@@ -524,6 +524,19 @@
 <embed src="download.gif"/>
 ```
 
+### Summary
+
+- ช่วย specific meaning element
+- ช่วยให้ screen reader สามารถ access,translate webpage ได้ดีขึ้น
+- ช่วย improve seo
+- `<header>`, `<nav>` , `<main>` and `<footer>` create the basic structure of the webpage.
+- `<section>` defines elements in a document, such as chapters, headings, or any other area of the document with the same theme.
+- `<article>` contain content such as articles, blogs, comments, etc.
+- `<aside>` contains information that is related to the main content, but not required in order to understand the dominant information.
+- `<figure>` contain all types of media.
+- `<figcaption>` is used to describe the media in `<figure>`.
+- `<video>`, `<embed>`, and `<audio>` elements are used for media files.
+
 ## How to structure
 
 # CSS
