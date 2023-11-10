@@ -376,16 +376,16 @@
 
 ### Why use Semantic HTML?
 
-- Accessibility => Semantic HTML makes webpages accessible for mobile devices and for people with disabilities as well. This is because screen readers and browsers are able to interpret the code better.
-- SEO => It improves the website SEO. search engines are better able to identify the content of your website and weight the most important content appropriately
-- Easy to Understand => code easier to read for other web developers
+- Accessibility => ทำให้การเข้าถึง webpage สำหรับ mobile,คนพิการดีขึ้น (screen reader,browser สามารถแปลง code ได้ดีขึ้น)
+- SEO => improve website seo, search engine สามารถ identify content ของ webpage ได้ดีขึ้น และ จัดการกับ content ที่สำคัญได้อย่างเหมาะสม
+- Easy to Understand => อ่าน code ง่าย
 
 ### Header and Nav
 
-1. Header(`<header>`) => container usually for either navigational links or introductory content containing `<h1>` to `<h6>` headings.
-2. Nav(`<nav>`) => a block of navigation links such as menus and tables of contents
+1. Header(`<header>`) => contain header content พวก navigation bar, heading `<h1>` to `<h6>`
+2. Nav(`<nav>`) => เป็น block ของ navigation link เช่น menu bar
 
-   - can be used inside of the `<header>` element but can also be used on its own.
+   - สามารถใช้ `nav` ใน `<header>` ได้ หรือ ใช้ตัวมันเดี่ยวๆก็ได้
 
 ```
 <header>
@@ -402,7 +402,7 @@
 
 1. Main(`<main>`)
 
-- contain main content of web
+- contain main content webpage
 
 ```
 <main>
@@ -420,7 +420,7 @@
 
 2. Footer(`<footer>`)
 
-- contains information such as
+- contains information พวก
   - Contact information
   - Copyright information
   - Terms of use
@@ -436,8 +436,8 @@
 
 ### Article and Section
 
-1. Section(`<section>`) => defines elements in a document, such as chapters, headings, or any other area of the document with the same theme. (part group ของ content ที่เหมือนๆกัน)
-2. Article(`<article>`) => can hold content such as articles, blogs, comments, magazines, etc. (that might contain a combination of text, images, audio, etc.)
+1. Section(`<section>`) => grouping content element ที่เป็น group เดียวกัน (part group ของ content ที่เหมือนๆกัน)
+2. Article(`<article>`) => grouping content พวก articles,blogs,comments,magazines (สามารถใส่พวก text, images, audio รวมกันใน article ได้)
 
 `Note : ` Section,Article สามารถสลับ inside กันและกันได้ ขึ้นอยู่กับ context
 
@@ -452,11 +452,10 @@
 
 ### The Aside Element
 
-- เป็นส่วนเสริมของ content ที่มา enhance element อื่นๆ (ไม่ได้ required ว่าต้องใส่)
-- ถูกใช้ใน
-  - content เสริมให้ article,section
-  - content เสริมด้านข้างๆ ซ้าย ขวา (additional sidebar)
+- เป็น additional content ที่มาเสริม element อื่นๆ (ไม่ได้ required ว่าต้องใส่)
 - contain additional information next to a main piece of content
+- ใช้ร่วมกันกับ article,section ก็ได้
+- ใช้กับ side bar content
 
 ```
 <article>
@@ -484,13 +483,13 @@
 
 ### Audio and Attributes
 
-- is used to embed audio content
+- ใช้กับ audio content
 - ref audio file with src attribute (ใน source tag)
-- ref type audio with type attribute (ใน source tag) (มีหรือไม่มีก็ได้ it helps the browser identify it more easily and determine if that type of audio file is supported by the browser.)
-- มีหลาย attribute ให้ใช้ มี 3 ตัวหลักที่ใช้
-  - controls: display audio controls พวก play,pause,mute เป็นต้น
+- ref type audio with type attribute (ใน source tag) (มีหรือไม่มีก็ได้ มันช่วยให้ browser ระบุ,กำหนด type audio ได้ง่ายขึ้น ว่า type audio นี้ browser support มั้ย
+- มีหลาย attribute มี 3 ตัวหลักที่ใช้
+  - controls: display audio controls พวก play,pause,mute
   - src: url audio file
-  - autoplay: เล่น audio auto
+  - autoplay: auto play audio
 - attribute ส่วนใหญ่จะใช้กับ audio tag (จะมีแค่ src,type ที่ใช้กับ source tag)
 
 ```
@@ -509,7 +508,7 @@
   - autoplay: autoplay video เมื่อ load หน้าเว็บเสร็จ
   - loop: loop video
 
-- content ที่อยู่ใน tag video จะ display ตอนที่เว็บไม่สามารถ display video ได้
+- content ที่อยู่ใน tag video จะ display ตอนที่ webpage load video ไม่ได้
 
 ```
 <video src="coding.mp4" controls>
@@ -529,13 +528,13 @@
 - ช่วย specific meaning element
 - ช่วยให้ screen reader สามารถ access,translate webpage ได้ดีขึ้น
 - ช่วย improve seo
-- `<header>`, `<nav>` , `<main>` and `<footer>` create the basic structure of the webpage.
-- `<section>` defines elements in a document, such as chapters, headings, or any other area of the document with the same theme.
-- `<article>` contain content such as articles, blogs, comments, etc.
-- `<aside>` contains information that is related to the main content, but not required in order to understand the dominant information.
-- `<figure>` contain all types of media.
-- `<figcaption>` is used to describe the media in `<figure>`.
-- `<video>`, `<embed>`, and `<audio>` elements are used for media files.
+- `<header>`, `<nav>` , `<main>` and `<footer>` ใช้ create basic structure ของ webpage
+- `<section>` grouping content ที่เป็น group เดียวกัน
+- `<article>` grouping content พวก articles,blogs,comments,magazines (สามารถใส่พวก text, images, audio รวมกันใน article ได้)
+- `<aside>` contain additional content ที่ related main content (ใส่ก็ได้ ไม่ใส่ก็ได้ ไม่ได้ required )
+- `<figure>` contain media conten
+- `<figcaption>` ใช้ใน `<figure>` เอาไว้อธิบาย media content
+- `<video>`, `<embed>`, and `<audio>` ใช้กับ media content
 
 ## How to structure
 
