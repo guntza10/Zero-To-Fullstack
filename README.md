@@ -8,7 +8,7 @@
   ทั่วโลกให้สามารถส่งข้อมูลระหว่างกันได้
 - ใช้ TCP/IP protocol ในการ transfer data ระหว่าง network
 
-`Note :` protocol เป็น standard หรือ rule
+`Note :` protocol เป็น standard หรือ rule ที่ต้องมีในการทำงานร่วมกัน
 
 ## World wide web(www)
 
