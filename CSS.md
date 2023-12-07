@@ -3,7 +3,7 @@
 - applies styling to websites
 - modifying colors, font types, font sizes, images, element positioning, and more
 
-## Syntax
+## Basic Syntax
 
 - เขียนได้ 2 แบบ
   - ruleset
