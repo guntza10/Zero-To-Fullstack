@@ -258,3 +258,110 @@ h1,
 ```
 
 ## Visual rules
+
+### Font Family
+
+- กำหนด style รูปแบบของ font
+
+```
+h1 {
+  font-family: Garamond;
+}
+```
+
+### Font Size
+
+- กำหนด style ขนาดของ font
+
+```
+p {
+  font-size: 18px;
+}
+```
+
+### Font Weight
+
+- กำหนด style ความหนา,บาง font
+
+```
+p {
+  font-weight: bold;
+}
+```
+
+### Text Align
+
+- กำหนดการวางตำแหน่งของ text โดยอิงกับ parent ของมัน
+- left,center,right,justify
+- left: เป็น default อยู่ด้านซ้าย (อิงกับ parent)
+- center: อยู่ตรงกลาง (อิงกับ parent)
+- right: อยู่ด้านขวา (อิงกับ parent)
+- justify: จัด text ให้เว้นวรรรค เพื่อให้ text ชิดติดซ้าย,ขวา (อิงกับ parent) ตัวอย่าง justify ตามภาพข้างล่าง
+
+  ![text-align-justify](/images/text-align-justify.png "text-align-justify")
+
+```
+h1 {
+  text-align: right; // left,center,right,justify
+}
+```
+
+### Color and Background Color
+
+- กำหนดสีมี 2 แบบ สี font (`color`), สี background (`background-color`)
+
+```
+h1 {
+  color: red; // สี font
+  background-color: blue; // สี background
+}
+```
+
+### Opacity
+
+- กำหนดความโปร่งใส ความทึบแสง
+- มีค่าตั้งแต่ 0(`0%`) - 1(`100%`)
+- 0 -> หายไปเลย ไม่แสดง
+- 1 -> แสดงเต็มไม่โปร่งใส
+
+```
+.overlay {
+  opacity: 0.5;
+}
+```
+
+### Background Image
+
+- กำหนด background จาก image (path url => `relative path(internal)`,`public url(external)`)
+
+- public url(external)
+
+  ```
+  .main-banner {
+    background-image: url('https://www.example.com/image.jpg');
+  }
+  ```
+
+- relative path(internal)
+
+  ```
+  .main-banner {
+    background-image: url('images/mountains.jpg');
+  }
+  ```
+
+### Important
+
+- กำหนด hard override style (`It will override any style no matter how specific it is`)
+- `!important` override all style ไม่สน specificity
+- จากตัวอย่างข้างล่าง ถึงแม้ว่า .main p จะมีความ specific มากกว่า p แต่ p มีการกำหนด `!important` hard override style ทำให้ไม่ว่า p จะเป็นอะไร nested อยู่ที่ไหน ก็จะเป็นสี blue เสมอ
+
+```
+p {
+  color: blue !important;
+}
+
+.main p {
+  color: red;
+}
+```
