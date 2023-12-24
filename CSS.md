@@ -50,3 +50,211 @@
 ```
 <link href='https://www.codecademy.com/stylesheets/style.css' rel='stylesheet'>
 ```
+
+## Selectors
+
+### Type
+
+- selector css ที่เป็น type element เช่น h1,p,a,ul,li เป็นต้น
+
+```
+p {
+  color: green;
+}
+
+h1 {
+  color: maroon;
+}
+```
+
+### Universal
+
+- เป็น selector ที่ selects all elements of any type.
+- selecting all children of a parent element
+
+```
+* {
+  font-family: Verdana;
+}
+```
+
+### Class
+
+- เป็น selector ที่ select class css
+- ต้องมี (`.`) หน้าชื่อ class
+
+```
+.title {
+  color: teal;
+}
+```
+
+### Multiple Classes
+
+- สามารถใช้ multiple class css ใน element เดียวกันได้
+
+```
+.green {
+  color: green;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+<h1 class='green bold'> ... </h1>
+```
+
+### ID
+
+- selector ของ id attribute
+- จะมี (`#`) ตามด้วยชื่อ id
+- ใช้กำหนด style css ให้กับ element ที่ต้องการ unique style
+
+```
+#large-title {
+  ...
+}
+
+<h1 id='large-title'> ... </h1>
+```
+
+### Attribute
+
+- selector ที่ select element ที่มี attribute
+- สามารถใช้ร่วมกับ type selector ได้
+
+```
+[href]{
+   color: magenta;
+}
+
+<img src='/images/seasons/cold/winter.jpg'>
+<img src='/images/seasons/warm/summer.jpg'>
+
+img[src*='winter'] {
+  height: 50px;
+}
+
+img[src*='summer'] {
+  height: 100px;
+}
+```
+
+`Note :`
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#syntax [`Attribute selectors`]
+
+### Pseudo-class
+
+- เป็น feature เสริมของ selector
+- จะถูก select เพื่อ apply style เมื่อ element เกิดการ action,interact อะไรซักอย่าง (hover,focus,visited,disabled,active)
+- ใช้ร่วมกับ selector อื่นๆ จะต้องมี (`:`) ตามด้วยชื่อ `action/interaction`
+- :hover, :focus, :visited, :disabled, :active
+
+```
+p:hover {
+  background-color: lime;
+}
+
+a:hover {
+  color: darkorange;
+}
+```
+
+### Classes and IDs
+
+1. Class selector
+
+- เหมาะกับการนำไปใช้ reuse style, ใช้มากกว่า 1 ครั้ง
+
+2.  ID selector
+
+- เหมาะกับการนำไปใช้ unique style กับ element เพียงอันเดียวเท่านั้น
+
+### Specificity
+
+- Specificity คือลำดับ priority ของการ apply style
+- ID > Class > Type
+- ID มีความ specific ที่สุด ทำให้สามารถ override all style ทุก selector ได้
+
+```
+<h1 class='headline'>Breaking News</h1>
+
+h1 {
+  color: red;
+}
+.headline {
+  color: firebrick;
+}
+```
+
+- จากตัวอย่างข้างบน class มีความ specific กว่า type ทำให้ style `color: firebrick;` override `color: red;` นั่นเอง
+
+`Note : ` To make styles easy to edit, it’s best to style with a type selector, if possible. If not, add a class selector. If that is not specific enough, then consider using an ID selector
+
+### Chaining
+
+- คือการ style css ให้กับ element ที่มี multiple selector (`ใน element เดียวกัน`)
+
+```
+h2.destination {
+  font-family: Tahoma;
+}
+```
+
+- จากตัวอย่างข้างบน style css จะทำงานก็ต่อเมื่อเป็น h2 ที่มี class destination เท่านั้น
+
+### Descendant Combinator (Specificity)
+
+- มันคือการ style css แบบ specific ให้กับ nested selector
+
+```
+<ul class='main-list'>
+  <li> ... </li>
+  <li> ... </li>
+  <li> ... </li>
+</ul>
+
+.main-list li {
+  color: blueviolet;
+}
+```
+
+- จากตัวอย่างข้างบน style css จะทำงานก็ต่อเมื่อเป็น li ที่ nested อยู่ใน class main-list เท่านั้น
+
+### Chaining and Specificity
+
+- การเพิ่ม และ chain selector มากกว่า 1 จะทำให้เพิ่ม specificity ให้กับ selector
+- จากตัวอย่างข้างล่าง จะเห็นว่าทุก p จะเป็นสี blue จะมีแค่ p ที่ nested ใน class main เท่านั้นที่จะเป็นสี red (เนื่องจาก `Descendant Combinator` หรือ `Chaining` หรือ `specificity` มี priority ในการ apply style มากกว่า selector ปกติ)
+
+```
+p {
+  color: blue;
+}
+
+.main p {
+  color: red;
+}
+```
+
+### Multiple Selectors
+
+- เราสามารถ group การเขียน style css ให้กับ multiple selectors ได้ เพื่อลดความซ้ำซ้อนในการเขียน style
+- จากตัวอย่างข้างล่างจะเห็นว่า `h1` และ `.menu` มี `font-family: Georgia` เหมือนกัน เพื่อลดความซ้ำซ้อนของการเขียน style เราสามารถ group การเขียนให้เป็นอันเดียวกันได้
+
+```
+h1 {
+  font-family: Georgia;
+}
+.menu {
+  font-family: Georgia;
+}
+// group multiple selector
+h1,
+.menu {
+  font-family: Georgia;
+}
+```
+
+## Visual rules
