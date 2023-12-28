@@ -707,3 +707,9 @@ h1 {
   box-sizing: border-box;
 }
 ```
+
+## The Box Model in DevTools
+
+- https://www.codecademy.com/journeys/full-stack-engineer/paths/fscj-22-web-development-foundations/tracks/fscj-22-fundamentals-of-css/modules/wdcp-22-learn-css-the-box-model-c8543ca0-92d4-4824-bb89-35a1fb0189d4/articles/f1-devtools-box-model
+
+- https://www.youtube.com/watch?v=uQi8TK-GDO4
