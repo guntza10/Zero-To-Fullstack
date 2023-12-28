@@ -365,3 +365,300 @@ p {
   color: red;
 }
 ```
+
+## The Box Model
+
+- ทุก element เป็น box model
+- box model จะประกอบไปด้วย 4 ส่วน
+  - dimenstion(`width,height`)
+  - border(`border`)
+  - padding(`padding`)
+  - margin(`margin`)
+
+### The Box Model Property
+
+1. width, height => width,height ของ content area
+2. padding => space ระหว่าง content กับ border
+3. border => เป็นขอบของ content อยู่รอบ padding,content
+4. margin => space ระหว่าง border กับ element's outside
+
+![the box model](/images/the-box-model.png "the-box-model")
+
+### Height and Width
+
+- width,height ของ content area
+- การกำหนด width,height เป็น px เป็นการฟิก dimension ทำให้ทุก device จะมี dimension เท่ากันหมด ส่งผลทำให้บางที element ที่ display เต็มจอของ laptop/pc screen อาจจะเกิด overflow บน mobile screen ได้
+- หน่วยเป็น px,percent ได้
+
+```
+p {
+  height: 80px;
+  width: 240px;
+}
+```
+
+### Border
+
+- เป็นขอบที่ล้อมรอบ padding,content
+- border จะ set ได้ 3 value
+  - width -> ความหนาของ border (`px,thin,medium,thick`)
+  - style -> style ของ border (`none, dotted, and solid etc.`) [https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#values]
+  - color -> สีของ border
+- default border คือ `medium none color`
+- ถ้า value ตัวใดตัวนึงไม่ได้ set ไว้ มันจะใช้ default
+
+```
+p {
+  border: 3px solid coral;
+}
+
+// width ไม่ได้ set จะถูก set เป็น default คือ medium
+p.content-header {
+  height: 80px;
+  width: 240px;
+  border: solid coral;
+}
+```
+
+### Border Radius
+
+- ความโค้งของ border (ความโค้งทั้ง 4 มุมของ border)
+- default จะเป็นสี่เหลี่ยม
+- สามารถปรับ border radius ได้เมื่อต้องการให้ขอบโค้ง
+- border-radius: 50%; จะทำให้มันเป็นวงกลม
+
+```
+div.container {
+  border: 3px solid blue;
+  border-radius: 5px;
+}
+// circle style
+div.container {
+  height: 60px;
+  width: 60px;
+  border: 3px solid blue;
+  border-radius: 50%;
+}
+```
+
+### Padding
+
+- space ระหว่าง content กับ border
+- padding มี specific 4 แบบ
+  - padding-top
+  - padding-right
+  - padding-bottom
+  - padding-left
+- หน่วยเป็น px,percent
+
+```
+p.content-header {
+  border: 3px solid coral;
+  padding: 10px;
+}
+// padding bottom
+p.content-header {
+  border: 3px solid fuchsia;
+  padding-bottom: 10px;
+}
+```
+
+### Padding Shorthand
+
+- เป็นการเขียน padding แบบย่อ โดยการ specific แต่ละแบบ(`padding-top,padding-right,padding-left,padding-bottom`)ในบรรทัดเดียว
+- specific ได้ 3 แบบ
+
+  - 4 Values: ไล่ตามเข็มนาฬิกา (`top,right,bottom,left`)
+
+  ```
+  p.content-header {
+    padding: 6px 11px 4px 9px;
+  }
+  ```
+
+  - 3 Values: ไล่ตามเข็มนาฬิกา และ ซ้าย,ขวาเท่ากัน (`top,left-right,bottom`)
+
+  ```
+  p.content-header {
+    padding: 5px 10px 20px;
+  }
+  ```
+
+  - 2 Values: ไล่ตามเข็มนาฬิกา บน-ล่างเท่ากัน,ซ้าย-ขวาเท่ากัน (`top-bottom,left-right`)
+
+  ```
+  p.content-header {
+    padding: 5px 10px;
+  }
+  ```
+
+### Margin
+
+- space ระหว่าง border กับ element's outside
+- margin มี specific 4 แบบ
+  - margin-top
+  - margin-right
+  - margin-bottom
+  - margin-left
+
+```
+p {
+  border: 1px solid aquamarine;
+  margin: 20px;
+}
+// margin-right
+p {
+  border: 3px solid DarkSlateGrey;
+  margin-right: 15px;
+}
+```
+
+### Margin Shorthand
+
+- เป็นการเขียน margin แบบย่อ โดยการ specific แต่ละแบบ(`margin-top,margin-right,margin-left,margin-bottom`)ในบรรทัดเดียว
+- specific ได้ 3 แบบ
+
+  - 4 Values: ไล่ตามเข็มนาฬิกา (`top,right,bottom,left`)
+
+    ```
+    p {
+      margin: 6px 11px 4px 9px;
+    }
+    ```
+
+    - 3 Values: ไล่ตามเข็มนาฬิกา และ ซ้าย,ขวาเท่ากัน (`top,left-right,bottom`)
+
+    ```
+    p {
+      margin: 5px 10px 20px;
+    }
+    ```
+
+    - 2 Values: ไล่ตามเข็มนาฬิกา บน-ล่างเท่ากัน,ซ้าย-ขวาเท่ากัน (`top-bottom,left-right`)
+
+    ```
+    p {
+      margin: 5px 10px;
+    }
+    ```
+
+### Auto
+
+- margin สามารถทำให้ content อยู่ตรงกลางได้โดยการกำหนด auto (`ต้อง set width ด้วย`)
+- จากตัวอย่างข้างล่าง element
+  - จะอยู่ตรงกลางของ container ของมัน
+  - margin top,bottom เป็น 0 px
+  - auto จะทำให้ browser ปรับ left,right margin จนกว่า element จะอยู่ตรงกลางของ container ของมัน
+  - จะใช้วิธีนี้ได้ต้อง set width ให้ element ด้วย
+  - ถ้าไม่ set width width มันจะ auto full width ทำให้ browser ไม่สามารถปรับ left,right margin เพราะ width สามารถเปลี่ยนแปลง ตามขนาดจอและwindow size ได้ตลอด มันไม่มี constant width ให้ ref ในการปรับ margin
+  - การ set width คือการ set minimum width ที่ browser จะ ref เพื่อใช้ในการปรับ left,right margin
+  - จากตัวอย่างข้างล่าง width ตัั้งแต่ 400px ขึ้นไป browser จะ ref ปรับ left,right margin เพื่อให้ element อยู่ตรงกลางได้ (ถ้า width น้อยกว่า 400px ไม่มีผล)
+
+```
+div.headline {
+  width: 400px;
+  margin: 0 auto;
+}
+```
+
+### Margin Collapse
+
+- vertical margins(`margin-top,margin-bottom`) จะยุบตาม margin ที่เยอะสุด โดยไม่เอามาคำนวณ space รวม margin ถ้ามันชนกันหรือติดกัน
+- horizon-margins(`margin-left,margin-right`),padding(`padding-left,padding-right,padding-top,padding-bottom`) จะเอา space มาคำนวณรวมกัน ถ้ามันชนกันหรือติดกัน
+
+![margin collapse](/images/margin-collapse.png "margin-collapse")
+
+### Minimum and Maximum Height and Width
+
+- min-width -> กำหนด min width ให้ element (width น้อยสุดเท่านี้ และจะไม่หด width น้อยกว่านี้)
+- max-width -> กำหนด max width ให้ element (width มากสุดเท่านี้ และจะไม่กาง width มากกว่านี้)
+- จากตัวอย่างข้างล่าง
+  - paragraph จะไม่หด width ต่ำกว่า 300px
+  - paragraph จะไม่กาง width เกิน 600px
+
+```
+p {
+  min-width: 300px;
+  max-width: 600px;
+}
+```
+
+- min-height -> กำหนด min height ให้ element (height น้อยสุดเท่านี้ และจะไม่หด height น้อยกว่านี้)
+- max-height -> กำหนด max height ให้ element (height มากสุดเท่านี้ และจะไม่กาง height มากกว่านี้)
+- จากตัวอย่างข้างล่าง
+  - paragraph จะไม่หด height ต่ำกว่า 150px
+  - paragraph จะไม่กาง height เกิน 300px
+
+```
+p {
+  min-height: 150px;
+  max-height: 300px;
+}
+```
+
+`Note : ` ถ้า max-height มีค่าที่น้อยๆ อาจทำให้ content มันเกินออกมานอก box model (`เกิด overflow`)
+
+### Overflow
+
+- overflow คือ content เกินออกมานอก box model
+- control content ที่มันเกินออกมานอก box model
+- overflow มี 3 value
+  - hidden -> hide content ส่วนที่เกินออกมา
+  - scroll -> จะเกิด scroll bar ในส่วนที่ content เกิน
+  - visible -> เป็น default display content ส่วนที่เกินออกมา
+- overflow จะ set ให้ parent element ทำให้ all children element ที่เกิน จะแสดงตาม overflow value ที่เรา set
+- overflow มี specific 2 แบบ
+  - overflow-x -> horizon overflow
+  - overflow-y -> vertical overflow
+
+```
+p {
+  overflow: scroll;
+}
+```
+
+`Note : ` https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
+
+### Resetting Defaults
+
+- ปกติทุก web browser จะมี default stylesheet(`user agent stylesheets`) ของตัวเอง
+- ยกตัวอย่างเช่น มี default padding, margin ซึ่งบางทีพวก default stylesheet พวกนี้ส่งผลต่อการ display html ของ browser ทำให้ developer design หรือ style web page ได้ยาก
+- อาจมี default stylesheet บางตัว ทำให้การ display html ออกมาได้ไม่ตรงตามที่เราเขียน เช่น padding,margin ที่เราไม่ได้ต้องการจาก default stylesheet
+- ซึ่งเราต้องทำการ reset default พวกนี้เอง ยกตัวอย่างการ reset default ตามข้างล่าง
+
+```
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+
+`Note : ` การกำหนดเป็น 0 ไม่จำเป็นต้องมีหน่วย
+
+### Visibility
+
+- control การ display element
+- set ได้ 3 value
+  - hidden -> hide element (hide แค่ content ของ element ไม่ได้ remove element ออกจาก web ทำให้มันจะ display empty space แทน)
+  - visible -> display element (default)
+  - collapse -> ยุบ element
+- visibility: hidden ถึงแม้จะไม่แสดง แต่เวลา inspect ก็จะเจอใน source code อยู่
+
+```
+<ul>
+  <li>Explore</li>
+  <li>Connect</li>
+  <li class="future">Donate</li>
+</ul>
+
+.future {
+  visibility: hidden;
+}
+```
+
+`Note : ` display: none กับ visibility: hidden แตกต่างกันยังไง?
+
+- display: none -> remove element ออกจาก web
+- visibility: hidden -> hide แค่ content แต่ element ยังอยู่ เลยทำให้มัน display empty space แทน
+
+## Changing the box model
