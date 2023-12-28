@@ -662,3 +662,48 @@ p {
 - visibility: hidden -> hide แค่ content แต่ element ยังอยู่ เลยทำให้มัน display empty space แทน
 
 ## Changing the box model
+
+- โดย default ของ box model พวก box dimensions, borders, padding, margin จะส่งผลต่อการคำนวณ dimension ของ box
+- จากตัวอย่างข้างล่าง
+  - padding 10 px -> จะเพิ่ม height เป็น 220px(200+10+10), width เป็น 320px(300+10+10) ให้ box
+  - border 1 px -> ความหนาจะเพิ่ม height เป็น 222px (220+1+1),width เป็น 322px(320+1+1) ให้ box
+- การ set border,padding ทำให้มันถูกคำนวณ dimension รวมกัน
+- ทำให้ dimension จริงไม่ตรงกับ dimension ที่เราต้องการจริงๆ
+
+```
+h1 {
+  border: 1px solid black;
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+}
+```
+
+### Box Model: Content-Box
+
+- box-sizing -> property control type ของ box model
+- box-sizing: content-box -> default ตัว border,padding มีผลต่อการคำนวณ dimension รวมกัน
+- ทำให้ actual dimension ไม่ตรงกับที่เราต้องการ
+
+![content box](/images/content-box.png "content-box")
+
+### Box Model: Border-Box
+
+- box-sizing: border-box
+- dimension(height,width) จะถูกฟิกไว้
+- border,padding จะถูกรวมใน box
+- ทำให้ dimension ทั้งหมดจะไม่เปลี่ยน (width,height ไม่เปลี่ยน)
+- border,padding จะไม่ถูกคำนวณ dimension รวมกันกับ content โดยจะปรับ dimension ของ content area auto + padding + border แล้วไม่เกิน actual width,height ที่เรา set ไว้
+- ทำให้ actual dimension ตรงกับที่เราต้องการ
+
+![border box](/images/border-box.png "border-box")
+
+### The New Box Model
+
+- set all element box เป็น border box
+
+```
+* {
+  box-sizing: border-box;
+}
+```
