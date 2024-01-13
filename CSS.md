@@ -838,3 +838,66 @@ header {
   left: 170px;
 }
 ```
+
+### Inline Display
+
+- inline จะเรียงจากซ้ายไปขวา ไม่ขึ้นบรรทัดใหม่
+- จะกว้างเท่ากับ content ไม่กางเต็มพื้นที่
+- ไม่สามารถ set width,height ได้
+- ยกตัวอย่าง element ที่เป็น inline เช่น `<em>`, `<strong>`, `<span>`, `<a>`
+- สามารถกำหนดให้ element ที่ไม่ใช่ inline ให้เป็น inline ได้ ดังตัวอย่างข้างล่าง
+
+```
+h1 {
+  display: inline;
+}
+```
+
+`Note : `
+
+- https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content
+
+### Display: Block
+
+- block จะเรียงจากบนลงล่าง ขึ้นบรรทัดใหม่เสมอ
+- จะกว้างเต็มพื้นที่
+- block element หรือ block-level element
+- สามารถ set width,height ได้
+- ยกตัวอย่าง element ที่เป็น block เช่น `<h1>` - `<h6>`, `<p>`, `<div>`, `<footer>`
+- สามารถกำหนดให้ element ที่ไม่ใช่ block ให้เป็น block ได้ ดังตัวอย่างข้างล่าง
+
+```
+strong {
+  display: block;
+}
+```
+
+`Note : `
+
+- https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content
+
+### Display: Inline-Block
+
+- เป็นการรวม feature ของ inline กับ block
+- จะเรียงจากซ้ายไปขวา ไม่ขึ้นบรรทัดใหม่
+- จะกว้างเท่ากับ content ไม่กางเต็มพื้นที่
+- set width,height ได้
+- ยกตัวอย่าง element ที่เป็น inline-block เช่น `<img>`
+
+```
+.rectangle {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+}
+
+<div class="rectangle">
+  <p>I’m a rectangle!</p>
+</div>
+<div class="rectangle">
+  <p>So am I!</p>
+</div>
+<div class="rectangle">
+  <p>Me three!</p>
+</div>
+```
