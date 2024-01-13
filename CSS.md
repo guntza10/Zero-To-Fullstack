@@ -717,3 +717,101 @@ h1 {
 `Note:` CSS Reset
 
 - https://meyerweb.com/eric/tools/css/reset/
+
+## Display nd Positioning
+
+### Flow of HTML
+
+- default ของ browser จะ render HTML แบบ no css จาก `ซ้ายไปขวา บนลงล่าง`
+- Flow html => `ซ้ายไปขวา บนลงล่าง`
+- property เกี่ยวกับ display,position
+  - position
+  - display
+  - z-index
+  - float
+  - clear
+
+### Position
+
+- default position ของ element จะอยู่ชิดซ้ายของตำแหน่งปัจจุบันที่มันอยู่
+- position มี 5 value
+  - static (default) ตำแหน่งที่ element อยู่
+  - relative
+  - absolute
+  - fixed
+  - sticky
+
+### Position: Relative
+
+- relative กำหนด position element ให้ relative กับ default position ของตัวมัน
+- การกำหนด position relative แล้วอยากให้ position `เปลี่ยนต้องมี offset properties ด้วย`
+- offset properties มี 4 value
+  - top -> move element จากบนลงล่าง
+  - bottom -> move element จากล่างขึ้นบน
+  - left -> move element จากซ้ายไปขวา
+  - right -> move element จากขวาไปซ้าย
+- offset properties กำหนดใน px,ems,percent ก็ได้
+- offset properties ไม่ทำงานกับ position static (default)
+- offset properties ไม่มีผลกับ position ของ element อื่น นอกจากตัวที่มันโดน set
+
+```
+.green-box {
+  background-color: green;
+  position: relative;
+  top: 50px;
+  left: 120px;
+}
+```
+
+### Position: Absolute
+
+- absolute กำหนด position element ให้เป็นอิสระต่อทุก element ไม่ relative กับใครนอกจาก parent
+- ทุก element จะ ignore เหมือนกับว่ามันไม่มีอยู่ (`ถูก remove ออกจาก flow html`)
+- position ของ absolute คือ position ที่ใกล้ที่สุดกับ parent (top:0,left:0)
+- ใช้ offset properties ร่วมกันในการจัด position
+- position absolute จะทำให้ width ของ element กว้างเท่าตัว content อาจจะต้องมีการกำหนด width 100% เพื่อให้มันกว้างเต็มพื้นที่
+
+```
+header {
+  background-color: #466995;
+  border-bottom: 1px solid #466995;
+  position: absolute;
+  width: 100%;
+}
+```
+
+### Position: Fixed
+
+- fixed เหมือน absolute แต่เป็น absolute ที่ fixed position ไว้ เวลาเลื่อนหน้าจอมันจะติด display มาด้วยทุกครั้ง
+- ถูก remove ออกจาก flow html
+- ปกติ absolute position อิสระต่อทุก element เวลาเลื่อนหน้าจอมันก็จะอยู่ที่ตำแหน่งอิสระของมัน ไม่ได้เลื่อนตามมาด้วย
+- ใช้ offset properties ร่วมกันในการจัด position
+
+```
+.title {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+```
+
+### Position: Sticky
+
+- sticky เป็น relative ที่เวลาเลื่อนจอมาถึงและเกิน position sticky มันจะ stick position ติดกับหน้าจอมาด้วย จนกว่าจะเลื่อนถึงล่างสุดมันถึงจะหลุด
+- ต้องใช้ร่วมกับ offset properties(ส่วนใหญ่ก็ใช้กับ top) เสมอ ไม่งั้น sticky จะไม่ทำงาน จะกลายเป็นแค่ relative ธรรมดา เพราะว่ามันไม่รู้ offset ว่าเมื่อเลื่อนมาถึงเท่าไรแล้วถึงจะต้อง stick ไว้
+- ยกตัวอย่างข้างล่าง box-bottom ก็จะเป็น relative อยู่ที่ position ที่มันอยู่ แต่ถ้าเลื่อนจากบนลงล่างถึง 240px เมื่อไร (top: 240px) sticky ก็จะทำงาน ถ้าไม่มีการกำหนด offset มาให้ sticky ก็จะไม่รู้ และทำตัวเหมือน relative
+
+```
+.box-bottom {
+  background-color: darkgreen;
+  position: sticky;
+  top: 240px;
+}
+```
+
+`Note :` sticky จะคล้ายกับ fixed
+
+- absolute -> อิสระ ถูก remove ออกจาก flow html
+- fixed -> เป็น absolute ที่ fixed position เวลาเลื่อนจะติดกับหน้าจอมาด้วยเสมอ
+- relative -> relative กับ default position ของมัน
+- sticky -> เป็น relative ที่ stick position เวลาเลื่อนมาถึงและเกิน position จะติดกับหน้าจอมาด้วยเสมอจนกว่าจะเลื่อนถึงล่างสุดมันถึงจะหลุด (`ต้องใช้ร่วมกับ offset properties(ส่วนใหญ่ก็ใช้กับ top) เสมอ`)
