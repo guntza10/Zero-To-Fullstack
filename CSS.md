@@ -901,3 +901,29 @@ strong {
   <p>Me three!</p>
 </div>
 ```
+
+### Float
+
+- float เอาไว้ position element ให้อยู่ซ้ายสุดหรือขวาสุดเท่าที่จะเป็นไปได้
+- ไม่นิยมใช้กันแล้ว
+- CSS grid, flexbox เป็นตัวเลือกที่ดีกว่าในการจัดการ
+- float มี 4 value
+  - left -> move ไปซ้ายสุดเท่าที่จะเป็นไปได้
+  - right -> move ไปขวาสุดเท่าที่จะเป็นไปได้
+  - none -> ไม่มีการ float (`default`)
+  - inherit -> inherit ตาม parent
+- สามารถใช้กับ static,relative ได้
+
+### Clear
+
+- การ float multiple element บางทีจะเกิดปัญหาเมื่อ แต่ละ element มี height ที่แตกต่างกัน ส่งผลทำให้ element สามารถชนกัน และไม่ยอมให้ element อื่นๆ move ไปซ้ายหรือขวาได้อย่างที่ควรจะเป็น
+- clear เป็นตัวกำหนดว่ามันควรจะจัดการยังไงเมื่อเกิดการชนกันกับ float element มี 4 value (`ใช้กับ element ที่ชนกันกับ float element แล้วส่งผลทำให้ float element move ไปซ้าย ขวาเพี๊ยน`)
+  - left -> push element ที่ชนให้ไปอยู่ด้านล่างของ left floated elements
+  - right -> push element ที่ชนให้ไปอยู่ด้านล่างของ right floated elements
+  - both -> push element ที่ชนให้ไปอยู่ด้านล่างของ leftหรือright floated elements
+  - none -> ไม่ทำอะไร ​(`default`)
+- float กับ clear ต้อง set value ให้ตรงกัน เพื่อให้มัน map การ push element ไปอยู่ด้านล่างของ ประเภท float element ได้ถูกต้องตรงกัน ถ้า set ไม่ตรงกันมันจะเพี๊ยนเหมือนเดิมมีค่าเท่ากับ none (`default`)
+
+`Note : `
+
+- https://www.w3schools.com/css/css_float_clear.asp
