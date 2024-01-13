@@ -718,7 +718,7 @@ h1 {
 
 - https://meyerweb.com/eric/tools/css/reset/
 
-## Display nd Positioning
+## Display and Positioning
 
 ### Flow of HTML
 
