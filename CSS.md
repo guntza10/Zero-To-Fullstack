@@ -815,3 +815,26 @@ header {
 - fixed -> เป็น absolute ที่ fixed position เวลาเลื่อนจะติดกับหน้าจอมาด้วยเสมอ
 - relative -> relative กับ default position ของมัน
 - sticky -> เป็น relative ที่ stick position เวลาเลื่อนมาถึงและเกิน position จะติดกับหน้าจอมาด้วยเสมอจนกว่าจะเลื่อนถึงล่างสุดมันถึงจะหลุด (`ต้องใช้ร่วมกับ offset properties(ส่วนใหญ่ก็ใช้กับ top) เสมอ`)
+
+### Z-Index
+
+- z-index เป็นตัวกำหนดความตื้น,ลึก ของ element
+- บางครั้งการจัด position อาจทำให้ element เกิดการ overlap เราใช้ z-index ในการแก้ปัญหาเรื่องเหล่านี้
+- z-index รับค่าเป็น interger
+- default z-index = 0
+- z-index ไม่สามารถใช้กับ static ได้ ต้องกำหนดให้เป็น relative ก่อน (`หรือ position อะไรก็ได้ที่ไม่ใช่ static`)
+
+```
+.blue-box {
+  background-color: blue;
+  position: relative;
+  z-index: 1;
+}
+
+.green-box {
+  background-color: green;
+  position: relative;
+  top: -170px;
+  left: 170px;
+}
+```
