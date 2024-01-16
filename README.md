@@ -101,3 +101,7 @@
 - `CSS` — applies styling to websites
 - `JavaScript` — adds interactivity to websites
 - `SQL(structured query language)` — allows your web application to store and retrieve data (save, modify, and access data)
+
+# Building Projects with VS Code
+
+- การตั้งชื่อ `index.html` เป็น best practice standard ในการตั้งชื่อ homepage website
