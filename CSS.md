@@ -786,6 +786,7 @@ header {
 - ถูก remove ออกจาก flow html
 - ปกติ absolute position อิสระต่อทุก element เวลาเลื่อนหน้าจอมันก็จะอยู่ที่ตำแหน่งอิสระของมัน ไม่ได้เลื่อนตามมาด้วย
 - ใช้ offset properties ร่วมกันในการจัด position
+- position fixed จะทำให้ width ของ element กว้างเท่าตัว content อาจจะต้องมีการกำหนด width 100% เพื่อให้มันกว้างเต็มพื้นที่
 
 ```
 .title {
