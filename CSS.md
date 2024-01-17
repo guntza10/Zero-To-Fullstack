@@ -928,3 +928,16 @@ strong {
 `Note : `
 
 - https://www.w3schools.com/css/css_float_clear.asp
+
+## Dev Tools for Develop
+
+- Tab Elements จะมี source code html ของ page พร้อม style css (Tab Styles,Computed)
+- ตอนที่เรา inspect tab Styles จะมี css rule บางตัวถูกขีดค่า แสดงว่า css rule ตัวนั้นถูก overwrite และไม่ใช้แล้ว(`การไปเปลี่ยนแปลงมันไม่มีผลอะไร`)
+  ![horizontal-black-line](/images/horizontal-black-line.png "horizontal-black-line")
+- tab Styles จะมี style css ทุก style ที่ถูกใช้กับ element นั้นๆ
+- tab computed(computed style) คือ specific style ของ element นั้นๆ และก็มี box model ให้ดู (content widht,height,padding,border,margin)
+  ![computed-tab](/images/computed-tab.png "horizontal-black-line")
+- การ modify html & css บน dev tools ไม่มีผลต่อ source code จริง
+- เราสามารถ modify เพิ่ม,ลบ,แก้ไข html ได้
+- เราสามารถ modify เพิ่ม,ลบ,แก้ไข style css ได้ ที่ tab Styles
+- สามารถเปลี่ยน property เกี่ยวกับ box model ได้ที่ tab Computed
