@@ -535,3 +535,9 @@
 - `<figure>` contain media conten
 - `<figcaption>` ใช้ใน `<figure>` เอาไว้อธิบาย media content
 - `<video>`, `<embed>`, and `<audio>` ใช้กับ media content
+
+## DOM (Document Object Model)
+
+- browser จะแปลง HTML ออกมาเป็น DOM 
+- เวลาที่เรา modify อะไรซักอย่างผ่าน Dev tool ของ browser มันไม่ได้เปลี่ยนแปลง source code แต่เปลี่ยนแปลง DOM
+- Source code กับ DOM แยกออกจากกัน ไม่ได้ผูกกันไว้
