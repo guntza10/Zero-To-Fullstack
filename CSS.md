@@ -48,7 +48,7 @@
   - rel คือ อธิบาย relationship ระหว่าง html file,css file (`stylesheet`)
 
 ```
-<link href='https://www.codecademy.com/stylesheets/style.css' rel='stylesheet'>
+<link href='https://www.codecademy.com/stylesheets/style.css' rel='stylesheet' type="text/css">
 ```
 
 ## Selectors

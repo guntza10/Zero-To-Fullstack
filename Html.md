@@ -4,7 +4,7 @@
 - structures website content like layout,text,images,videos,elements
 - มี element tag ของ element นั้นๆ
 - มี attribute เอาไว้กำหนดคุณสมบัติต่างๆให้ element tag
-- `<link rel="stylesheet" href="style.css">` เป็นการเรียกใช้ css file ใน html
+- `<link  rel="stylesheet" href="style.css" type="text/css">` เป็นการเรียกใช้ css file ใน html
   - rel เป็น attribute ที่ระบุ relation ระหว่าง current document กับ link resource
 
 ## Common Elements
@@ -538,6 +538,6 @@
 
 ## DOM (Document Object Model)
 
-- browser จะแปลง HTML ออกมาเป็น DOM 
+- browser จะแปลง HTML ออกมาเป็น DOM
 - เวลาที่เรา modify อะไรซักอย่างผ่าน Dev tool ของ browser มันไม่ได้เปลี่ยนแปลง source code แต่เปลี่ยนแปลง DOM
 - Source code กับ DOM แยกออกจากกัน ไม่ได้ผูกกันไว้
