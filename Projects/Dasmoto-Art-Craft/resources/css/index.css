@@ -124,3 +124,49 @@ table {
 }
 
 /* my style */
+
+body {
+  font-family: Helvetica;
+}
+header {
+  background-image: url("/resources/images/pattern.jpeg");
+  margin: 67px 0;
+}
+
+/* type */
+h1 {
+  /* background-image: url("/resources/images/pattern.jpeg"); */
+  font-size: 100px;
+  font-weight: bold;
+  color: khaki;
+  text-align: center;
+}
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin: 26.56px 0;
+}
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 18.72px 0;
+}
+p {
+  margin-bottom: 16px;
+}
+.highlight-text {
+  font-weight: bold;
+  color: blue;
+}
+
+/* background */
+.bg-medium-spring-green {
+  background-color: mediumspringgreen;
+}
+.bg-light-coral {
+  background-color: lightcoral;
+}
+.bg-sky-blue {
+  background-color: skyblue;
+}
