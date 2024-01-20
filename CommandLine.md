@@ -128,3 +128,19 @@ $ touch keyboard.txt
   - up arrow => เลื่อน command ก่อนหน้ากลับไปเรื่อยๆจนเก่าสุด
   - down arrow => เลื่อน command ลงมาเรื่อยๆจนล่าสุด
 - clear คือเคลียร์ display command ทั้งหมดที่เราเคยใช้ (clear แค่ display แต่ไม่ได้ clear สิ่งที่ command เคยทำ)
+
+## Setting Up Your Command Line
+
+- Command Line Interface (`CLI`) มีหลายแบบ
+- `CLI` ที่เราจะใช้คือ bash
+
+### What is Bash?
+
+- Bash เป็น open source CLI
+- Bash เป็น default shell บน Linux,Mac OS
+
+`Note : ` shell เป็น specific CLI แบบนึง
+
+### Bash Setup for Mac and Windows
+
+- https://www.codecademy.com/journeys/full-stack-engineer/paths/fscj-22-web-development-foundations/tracks/fscj-22-deploying-websites/modules/wdcp-22-command-line-for-building-websites-882bca36-730b-44af-9f3f-fff9c60073e7/articles/f1-u3-cli-setup
