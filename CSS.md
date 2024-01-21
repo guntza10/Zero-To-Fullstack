@@ -941,3 +941,114 @@ strong {
 - เราสามารถ modify เพิ่ม,ลบ,แก้ไข html ได้
 - เราสามารถ modify เพิ่ม,ลบ,แก้ไข style css ได้ ที่ tab Styles
 - สามารถเปลี่ยน property เกี่ยวกับ box model ได้ที่ tab Computed
+
+## Color
+
+- set value color ได้ 3 แบบ
+  - named color -> keyword color (https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
+  - RGB -> เป็นตัวเลขที่แสดงถึงการ mix กันของ red,green,blue
+  - HSL -> เป็นตัวเลขที่แสดงถึงการ mix กันของ hue,saturation,lightness
+
+### Foreground vs Background
+
+- การ set color มี 2 แบบ
+  - Foreground: สี element (color)
+  - Background: สี background element (background-color)
+
+```
+h1 {
+  color: red;
+  background-color: blue;
+}
+```
+
+### Hexadecimal(Hex colors)
+
+- Hex color เป็น format value ของค่าสีในเลขฐานสิบหก
+- จะต้องเริ่มต้นด้วย (`#`) เสมอ
+- มี 3 หรือ 6 digits
+- hex color แสดงถึงค่าของ red,green,blue
+- ถ้า hex มันมีตัวซ้ำกัน2ตัว สามารถยุบเป็น 1 ตัวได้ เช่น
+  - #00 00 00 => #000
+  - #FF FF FF => #FFF
+  - #00 FF FF => #0FF
+- Hexadecimal จะมี 16 ตัว คือ 0-9 , A-F (10-15)
+- hex color จะเป็น uppercae หรือ lowercase ก็ได้
+
+```
+darkseagreen: #8FBC8F
+sienna:       #A0522D
+saddlebrown:  #8B4513
+brown:        #A52A2A
+black:        #000000 or #000
+white:        #FFFFFF or #FFF
+aqua:         #00FFFF or #0FF
+
+background-color: #9932cc;
+```
+
+### RGB Colors
+
+- RGB Color เป็น format value ของค่าสีใน RGB system
+- rgb(red, green, blue);
+- ค่าสีแต่ละตัวเป็นได้ตั้งแต่ 0-255 (decimal)
+
+```
+h1 {
+  color: rgb(23, 45, 23);
+}
+```
+
+### HSL (Hue, Saturation, and Lightness)
+
+- HSL(`hue-saturation-lightness color`) เป็น format value ของค่าที่แสดงถึง hue(สี),saturation(ความอิ่มตัว),lightness(ความสว่าง)
+- hsl(hue,saturation,lightness)
+  - hue -> ค่าสี ตั้งแต่ 0-360
+  - saturation -> ค่าความอิ่มสี เป็น percent
+  - lightness -> ค่าความสว่าง เป็น percent
+
+```
+color: hsl(120, 60%, 70%);
+```
+
+- hue แสดงถึง angle ของ color wheel
+
+  - Red 0 , Green 120 , Blue 240 และกลับมาที่ Red 360
+
+  ![color-wheel](/images/color_wheel_4_background.svg "color wheel")
+
+- saturation แสดงถึงค่าความอิ่มตัวของสี (ความเข้ม,ความใส)
+  - increase toward 100% -> สีจะเข้มข้นขึ้น
+  - decrease toward 0% -> สีจะกลายเป็นสีเทา
+- lightness แสดงถึงค่าความสว่าง
+  - 50% -> normal lightness
+  - increase toward 100% -> สีจะสว่างขึ้น
+  - decrease toward 0% -> สีจะมืดลงจนเป็นสีดำ
+
+### Opacity and Alpha
+
+- Opacity,Alpha คือความทึบแสง,ความโปร่งใส
+- เราสามารถ set opacity(alpha) ให้ rgb,hsl ได้
+- opacity(alpha) 0-1 (decimal)
+  - 0 -> หายไปเลย ไม่แสดง
+  - 1 -> แสดงเต็มไม่โปร่งใส
+- hsla(hue, saturation, lightness, `alpha/opacity`)
+- rgba(red, green, blue,`alpha/opacity`)
+
+  ```
+  color: hsla(34, 100%, 50%, 0.1);
+  color: rgba(234, 45, 98, 0.33);
+  ```
+
+- hex color สามารถ set opacity(alpha) ได้เหมือนกัน
+  - add 2 digit ต่อท้าย hex 6 digits (#52BC82`80`)
+  - add 1 digit ต่อท้าย hex 3 digits (#F00`3`)
+  - range opacity ของ hex color คือ 00 (โปร่งใส) - FF (ทึบแสง).
+- named color set opacity(alpha) ไม่ได้
+- named color มี keyword สำหรับ zero-opacity -> transparent
+
+  - มันจะเท่ากับ rgba(0, 0, 0, 0)
+
+  ```
+  color: transparent;
+  ```
