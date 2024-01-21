@@ -1105,3 +1105,33 @@ color: hsl(120, 60%, 70%);
   ```
 
 ### Font Weight
+
+- กำหนด style ความหนา,บาง font
+- กำหนดด้วยตัวเลขหรือ keyword
+- Keyword Values
+  - bold: font หนา
+  - normal: normal font weight เป็น default value
+  - lighter: ค่า font weight จะบางกว่าของ parent
+  - bolder: ค่า font weight จะหนากว่าของ parent
+- Numerical Values
+
+  - เป็นตัวเลขตั้งแต่ 1-1000 (บางสุด-หนาสุด)
+  - 400 = normal
+  - 700 = bold
+
+  ```
+  .left-section {
+    font-weight: 700;
+  }
+
+  .right-section {
+    font-weight: bold;
+  }
+  ```
+
+`Note : `
+
+- การกำหนด font-weight เป็นตัวเลขไม่ได้มีในทุก font
+- ต้องเช็ค font ที่ใช้ด้วยว่า สามารถกำหนด font-weight เป็นตัวเลขได้มั้ย
+
+### Font Style
