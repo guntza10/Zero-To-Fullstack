@@ -1135,3 +1135,15 @@ color: hsl(120, 60%, 70%);
 - ต้องเช็ค font ที่ใช้ด้วยว่า สามารถกำหนด font-weight เป็นตัวเลขได้มั้ย
 
 ### Font Style
+
+- กำหนด font style
+  - normal -> ตัวปกติ default
+  - italic -> ตัวเอียง
+
+```
+h3 {
+  font-style: italic;
+}
+```
+
+### Text Transformation
