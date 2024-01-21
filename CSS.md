@@ -1194,3 +1194,53 @@ h1 {
   - กำหนดการวางตำแหน่งของ text โดยอิงกับ parent ของมัน
 
 ### Web Fonts
+
+- Web font ทั่วไป เป็น font ที่ทุก browser,OS(operating systems) ไม่ได้ support โดย default
+- Web font แต่ละตัวก็จะมี style และความ unique แตกต่างกันไปในแบบของตัวเอง
+- Free font services
+  - Google Fonts -> https://fonts.google.com/
+  - Adobe Fonts -> https://fonts.adobe.com/
+
+### Web Fonts Using `<link>`
+
+- https://fonts.google.com/
+- เลือก font ที่ต้องการ
+- เลือก style ของ font ที่ต้องการ
+- จะได้ generated link มา เอาไปวางไว้ที่ `<head>`
+- กำหนด font-family ตาม
+
+### Web Fonts Using @font-face
+
+- download font มาไว้ที่เครื่องเรา
+- แล้วก็ set up @font-face ruleset ให้มันโดย ref จาก font file ที่เรา download มา
+- format font มีหลายแบบ เช่น
+  - OTF (OpenType Font)
+  - TTF (TrueType Font)
+  - WOFF (Web Open Font Format)
+  - WOFF2 (Web Open Font Format 2)
+- The different formats are a progression of standards for how fonts will work with different browsers
+- It’s a good idea to include `TTF`, `WOFF`, and `WOFF2` formats with your @font-face rule to ensure compatibility on all browsers.
+- file ที่ download มาส่วนใหญ่จะเป็น TTF format
+- เราสามารถใช้ tool ในการ generate file format อื่นๆ ได้ อ่านต่อจากลิ๊งข้างล่างนี้
+  - https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts#generating_the_required_code
+- นำ file font ของ format ทั้งหมดที่เราต้องการใช้ไปรวมไว้ที่ folder สำหรับ font
+- set @font-face ruleset ตามนี้
+  - set ไว้บนสุดของ CSS stylesheet
+  - กำหนด custom name ให้ font-family (`สามารถตั้งชื่ออะไรก็ได้ แต่ต้องมี ' ' ครอบ`) สำหรับ font file ที่เรา download มา
+  - src กำหนด url(`ref relative path font file`),format(`format font`)
+  - ลำดับของ font format มีผล เพราะ browser จะเริ่ม search จากบนลงล่าง จนกว่าจะเจอ format ที่มัน support
+  - ดู format prioritization เพิ่มเติมที่นี่ https://css-tricks.com/snippets/css/using-font-face-in-css/
+  ```
+  @font-face {
+    font-family: 'MyParagraphFont';
+    src: url('fonts/Roboto.woff2') format('woff2'),
+        url('fonts/Roboto.woff') format('woff'),
+        url('fonts/Roboto.ttf') format('truetype');
+  }
+  ```
+  - หลังจาก set up font face เสร็จ ก็เอาไปใช้ต่อตามข้างล่าง
+  ```
+  p {
+    font-family: 'MyParagraphFont', sans-serif;
+  }
+  ```
