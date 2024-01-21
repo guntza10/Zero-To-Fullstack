@@ -1147,3 +1147,15 @@ h3 {
 ```
 
 ### Text Transformation
+
+- เป็นการกำหนดรูปแบบ text
+  - uppercase -> ตัวพิมพ์ใหญ่หมด
+  - lowercase -> ตัวพิมพ์เล็กหมด
+
+```
+h1 {
+  text-transform: uppercase;
+}
+```
+
+### Text Layout
