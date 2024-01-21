@@ -1074,7 +1074,7 @@ color: hsl(120, 60%, 70%);
   ```
 
 - Web Safe Fonts
-  - เป็น font ที่สามารถ display ได้เหมือนกันบนทุก browser,OS(operating systems)
+  - เป็น font ที่ support ทุก browser,OS(operating systems)
   - บาง font อาจะไม่ support กับบาง browser
   - list web safe font: https://www.cssfontstack.com/
 - Fallback Fonts and Font Stacks
@@ -1192,3 +1192,5 @@ h1 {
 - Text Alignment ([Go to Text Align](#text-align))
 
   - กำหนดการวางตำแหน่งของ text โดยอิงกับ parent ของมัน
+
+### Web Fonts
