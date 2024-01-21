@@ -1052,3 +1052,56 @@ color: hsl(120, 60%, 70%);
   ```
   color: transparent;
   ```
+
+## Typography
+
+### Font Family
+
+- กำหนด style รูปแบบของ font
+
+  ```
+  h1 {
+    font-family: Arial;
+  }
+  ```
+
+- Multi-Word Values -> ถ้าเป็นชื่อ font ที่มีหลายคำใช้ `' '` ครอบ
+
+  ```
+  h1 {
+    font-family: 'Times New Roman';
+  }
+  ```
+
+- Web Safe Fonts
+  - เป็น font ที่สามารถ display ได้เหมือนกันบนทุก browser,OS(operating systems)
+  - บาง font อาจะไม่ support กับบาง browser
+  - list web safe font: https://www.cssfontstack.com/
+- Fallback Fonts and Font Stacks
+  - font stack -> group ของ font ที่เหมือนกัน
+  - fallback font -> browser จะเลือกใช้ font ใน font stack ไล่จากซ้ายไปขวา ถ้า font ที่เจอไม่ support ก็จะขยับไปใช้ font ตัวต่อไปใน font stack
+  - จากตัวอย่างข้างล่าง browser จะพยายามใช้่ font Caslon ก่อน ถ้าไม่มี ก็จะไปใช้ Georgia,Times New Roman ต่อตามลำดับ
+  ```
+  h1 {
+  // font stack
+  font-family: Caslon, Georgia, 'Times New Roman';
+  }
+  ```
+- Serif and Sans-Serif
+
+  - font จะแบ่งออกเป็น 2 group ใหญ่ๆ คือ Serif, Sans-Serif
+  - ยกตัวอย่าง Caslon, Georgia, Times New Roman เป็น serif fonts
+  - Serif จะมี extra detail ที่ส่วนท้ายของตัวอักษรแต่ละตัว
+  - Sans-Serif จะปกติ ไม่มี extra detail ที่ส่วนท้ายของตัวอักษรแต่ละตัว
+
+  ![serif-san-serif](/images/htmlcss1-diagram__fontanatomy.svg)
+
+  - serif, sans-serif จะถูกใช้เพิ่มเข้าไปเป็นตัวสุดท้ายของ fallback font ถ้าไม่มี font ไหนเลยใน font stack มันก็จะใช้ font อะไรก็ได้ที่เป็น serif หรือ sans-serif ที่อยู่ในระบบ
+
+  ```
+  h1 {
+  font-family: Caslon, Georgia, 'Times New Roman', serif;
+  }
+  ```
+
+### Font Weight
