@@ -1159,3 +1159,36 @@ h1 {
 ```
 
 ### Text Layout
+
+- Letter Spacing
+  - set space ระหว่างตัวอักษร
+  - ใช้หน่วย unit (px,em)
+  ```
+  p {
+    letter-spacing: 2px;
+  }
+  ```
+- Word Spacing
+  - set space ระหว่างคำ
+  - ใช้หน่วย unit (px,em)
+  - แนะนำว่าใช้ em ดีกว่า px เพราะ space จะถูก set base ตาม size ของ font
+  ```
+  h1 {
+    word-spacing: 0.3em;
+  }
+  ```
+- Line Height
+  - set ความสูงให้บรรทัดของ text
+  - ความสูงของ text จะขึ้นอยู่กับ font size
+  - การ set line-height จะไปเพิ่มความสูงให้บรรทัดของ text นั้นๆ
+  - ใช้หน่วย unit (px,em,%) หรือเป็นตัวเลขก็ได้(`unitless`)
+    ![line height](/images/htmlcss1-diagram__leading_updated_1-01.svg)
+  ```
+  p {
+    line-height: 1.4;
+  }
+  ```
+  - ถ้า set เป็น unitless การเปลี่ยนแปลง font size จะ auto ปรับ line height ให้ (`unitless มันจะ responsive base on current font size)`
+- Text Alignment ([Go to Text Align](#text-align))
+
+  - กำหนดการวางตำแหน่งของ text โดยอิงกับ parent ของมัน
