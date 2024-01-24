@@ -545,6 +545,9 @@ p {
 ### Auto
 
 - margin สามารถทำให้ content อยู่ตรงกลางได้โดยการกำหนด auto (`ต้อง set width ด้วย`)
+  - โดยการ set width set ที่ตัว element ได้เลย ไม่จำเป็นต้อง set ที่ parent หรือ container ที่ครอบมัน
+  - width ต้องน้อยกว่า parent หรือ container ที่ครอบมัน ถึงจะถูกจัด center ให้
+  - หรืออาจจะไม่ต้อง set width ก็ได้ ถ้า width ของ element มันไม่ได้กางเต็ม full width และน้อยกว่า width container/parent อยู่แล้ว
 - จากตัวอย่างข้างล่าง element
   - จะอยู่ตรงกลางของ container ของมัน
   - margin top,bottom เป็น 0 px
